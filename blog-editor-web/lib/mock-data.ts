@@ -151,7 +151,7 @@ More content coming soon...
 ];
 
 // In-memory store for demo (allows CRUD operations during session)
-let postsStore = [...mockPosts];
+const postsStore = [...mockPosts];
 
 export function getMockPosts(): Post[] {
   return postsStore;
