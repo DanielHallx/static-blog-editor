@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
+    // In demo mode, use Next.js API routes (no rewrite needed)
+    if (process.env.DEMO_MODE === 'true') {
+      return [];
+    }
+
+    // In production/dev mode, proxy to backend
     const apiUrl = process.env.API_URL || 'http://localhost:8000';
     return [
       {
